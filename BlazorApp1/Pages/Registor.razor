@@ -1,0 +1,31 @@
+﻿@page "/Registor"
+
+<h3>Registor</h3>
+
+<div>
+    <ruby>Email</ruby>
+    <input type="text" @bind="user.Email"><br><br>
+    <ruby>Login</ruby>
+    <input type="text" @bind="user.Login"><br><br>
+    <ruby>Password</ruby>
+    <input type="text" @bind="user.Password"><br><br>
+    <ruby>Name</ruby>
+    <input type="text" @bind="user.Name"><br><br>
+    <ruby>FName</ruby>
+    <input type="text" @bind="user.FName"><br><br>
+    <br><br>
+    <button class="btn btn-primary" @onclick="button">Register</button>
+</div>
+
+
+
+@code {
+    User user = new User();
+    MD mongo = new MD();
+
+    void button()
+    {
+        
+        mongo.AddUser(user);
+    }
+}
